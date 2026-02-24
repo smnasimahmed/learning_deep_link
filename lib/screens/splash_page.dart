@@ -41,6 +41,8 @@ class _SplashPageState extends State<SplashPage> {
 
       if (!_handledDeepLink) {
         Get.toNamed("/profile");
+      } else {
+        Get.toNamed("/error");
       }
     } catch (_) {
       Get.toNamed("/error");
@@ -55,6 +57,8 @@ class _SplashPageState extends State<SplashPage> {
     if (path.isNotEmpty && path != "/") {
       Get.toNamed(path);
       return;
+    } else {
+      Get.toNamed("/error");
     }
   }
 
